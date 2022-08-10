@@ -1,6 +1,6 @@
+import { Container } from '@mui/material';
 import React from 'react';
-import { Box, Container } from '@mui/material';
-import { CustomWrapperBox } from 'containers/headerContainer/style';
+import { CustomWrapperBox } from './style';
 
 export const ColorContainer = (props: {
   children: React.ReactNode;

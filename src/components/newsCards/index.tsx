@@ -1,11 +1,11 @@
 import { CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import { cards } from 'constants/_data';
+import { cardsType } from 'constants/_data';
 import { DateContainer, CardContainer, BoxDateContainer, CardFullContainer } from './style';
 
-export const NewsCards = () => {
+export const NewsCards = (props: { cards: cardsType[] }) => {
   return (
     <Grid container justifyContent="space-between">
-      {cards.map((card) => {
+      {props.cards.map((card) => {
         return (
           <Grid item sx={{ mb: 7.5 }}>
             {card.fullImg ? (

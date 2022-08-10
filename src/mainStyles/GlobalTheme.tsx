@@ -134,16 +134,19 @@ export const themeCustom = createTheme({
       color: PS_OPTIONAL_BLACK,
       textTransform: 'uppercase',
     },
-    // h6: {
-    //   fontSize: 18,
-    //   fontWeight: 700,
-    //   color: PS_MAIN_GREY,
-    // },
-    // subtitle2: {
-    //   fontSize: 14,
-    //   fontWeight: 500,
-    //   color: PS_MAIN_BLUE,
-    // },
+    h6: {
+      fontSize: 18,
+      fontWeight: 700,
+      color: PS_OPTIONAL_BLACK,
+    },
+    subtitle2: {
+      fontSize: 18,
+      fontWeight: 400,
+      color: PS_OPTIONAL_BLACK,
+      paddingTop: 40,
+      paddingBottom: 24,
+      textTransform: 'uppercase',
+    },
     body1: {
       fontSize: 20,
       fontWeight: 300,
@@ -151,9 +154,10 @@ export const themeCustom = createTheme({
       lineHeight: '25px',
     },
     body2: {
-      fontSize: 20,
-      fontWeight: 300,
-      color: PS_MAIN_GREY_DARK,
+      fontSize: 16,
+      fontWeight: 500,
+      color: PS_MAIN_WHITE,
+      textTransform: 'uppercase',
     },
     subtitle1: {
       fontSize: 12,
@@ -220,4 +224,15 @@ export const themeCustom = createTheme({
     //   light: PS_OPTIONAL_RED,
     // },
   },
+
+  // overrides: {
+  //   MuiInput: {
+  //     input: {
+  //       '&::placeholder': {
+  //         color: 'gray',
+  //       },
+  //       color: 'white', // if you also want to change the color of the input, this is the prop you'd use
+  //     },
+  //   },
+  // },
 });
