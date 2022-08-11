@@ -12,37 +12,45 @@ import React from 'react';
 export const AppPage = () => {
   return (
     <div>
-      <ColorContainer width={1500} bgImage={headerTitles.header.pathImg}>
-        <GeneralHeaderWrapper height={520} tag={headerTitles.header.tag} title={headerTitles.header.title}>
+      <ColorContainer bgImage={headerTitles.header.pathImg}>
+        <GeneralHeaderWrapper
+          height={{ lg: 520, md: 520, sm: 205 }}
+          tag={headerTitles.header.tag}
+          title={headerTitles.header.title}
+        >
           <UpMenuContainer />
         </GeneralHeaderWrapper>
       </ColorContainer>
-      <ColorContainer width={1500} color={PS_MAIN_RED}>
+      <ColorContainer color={PS_MAIN_RED}>
         <MenuContainer />
       </ColorContainer>
-      <ColorContainer width={1500} color={PS_MAIN_BACKGROUND}>
+      <ColorContainer color={PS_MAIN_BACKGROUND}>
         <CardsContainer />
       </ColorContainer>
-      <ColorContainer width={1500} bgImage={headerTitles.middle.pathImg}>
+      <ColorContainer bgImage={headerTitles.middle.pathImg}>
         <GeneralHeaderWrapper
-          height={536}
-          paddingTitle={31}
+          // height={536}
+          height={{ lg: 536, md: 276, sm: 276 }}
+          // paddingTitle={31}
+          paddingTitle={{ lg: 31, md: 12, sm: 9 }}
           tag={headerTitles.middle.tag}
           title={headerTitles.middle.title}
         />
       </ColorContainer>
-      <ColorContainer width={1500} color={PS_MAIN_BACKGROUND}>
+      <ColorContainer color={PS_MAIN_BACKGROUND}>
         <ContactsContainer />
       </ColorContainer>
-      <ColorContainer width={1500} bgImage={headerTitles.footer.pathImg}>
+      <ColorContainer bgImage={headerTitles.footer.pathImg}>
         <GeneralHeaderWrapper
-          height={536}
-          paddingTitle={31}
+          height={{ lg: 536, md: 276, sm: 276 }}
+          // height={536}
+          // paddingTitle={31}
+          paddingTitle={{ lg: 31, md: 12, sm: 9 }}
           article={headerTitles.footer.article}
           title={headerTitles.footer.title}
         />
       </ColorContainer>
-      <ColorContainer width={1500} color={PS_MAIN_RED}>
+      <ColorContainer color={PS_MAIN_RED}>
         <GeneralFooterWrapper />
       </ColorContainer>
     </div>

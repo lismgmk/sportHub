@@ -7,6 +7,11 @@ export const BoxContainer = styled(Box)<BoxProps>(({ theme }) => ({
   alignItems: 'center',
 }));
 export const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  fontSize: 12,
+  fontWeight: 500,
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.light,
+  lineHeight: '14px',
   width: 201,
   height: 40,
   borderRadius: 100,

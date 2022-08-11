@@ -10,7 +10,7 @@ export const ContainerLowMenu = styled(Box)<BoxProps>(({ theme }) => ({
 }));
 
 export const LowerMenuButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  fontsize: 14,
+  fontsize: '14px',
   fontWeight: 500,
   color: theme.palette.primary.light,
   background: 'rgba(0, 0, 0, 0)',

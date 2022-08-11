@@ -102,9 +102,26 @@ declare module '@mui/material/styles' {
     };
   }
 }
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: false;
+  }
+}
 
 export const themeCustom = createTheme({
   shadows: shadows.map(() => 'none') as Shadows,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 320,
+      md: 768,
+      lg: 1380,
+    },
+  },
   typography: {
     fontFamily: `"Roboto Flex", sans-serif`,
     h1: {
@@ -170,19 +187,22 @@ export const themeCustom = createTheme({
       color: PS_MAIN_RED,
       fontFamily: `"Millimetre", sans-serif`,
       transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
+      lineHeight: '20px',
     },
 
-    button: {
-      fontSize: 12,
+    // button: {
+    //   fontSize: 12,
+    //   fontWeight: 500,
+    //   color: PS_MAIN_WHITE,
+    //   background: PS_MAIN_RED,
+    //   lineHeight: '14px',
+    // },
+    overline: {
+      fontSize: 14,
       fontWeight: 500,
       color: PS_MAIN_WHITE,
-      background: PS_MAIN_RED,
+      textTransform: 'lowercase',
     },
-    // overline: {
-    //   fontSize: 14,
-    //   fontWeight: 500,
-    //   color: PS_OPTIONAL_GREY,
-    // },
   },
   palette: {
     primary: {
