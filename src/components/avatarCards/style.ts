@@ -7,7 +7,6 @@ export const CardContainer = styled(Card)<CardProps>(({ theme }) => ({
   },
   maxWidth: 300,
   height: 289,
-  padding: '20px 0px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

@@ -1,11 +1,18 @@
-import { Grid, Typography, Box, SvgIcon } from '@mui/material';
+import { Grid, Typography, Box, SvgIcon, useTheme, useMediaQuery } from '@mui/material';
 import { sxNewsCards } from 'components/newsCards/style';
-import { avatars } from 'constants/_data';
+import { avatars, avatarsType } from 'constants/_data';
 import { nanoid } from 'nanoid';
+import { useEffect, useState } from 'react';
 import { QuoteSvg } from 'svgIcons/QuoteSvg';
 import { CardContainer, sxAvatarSvgIcon, sxAvatarImage } from './style';
 
 export const AvatarCards = () => {
+  const theme = useTheme();
+  const matchesSm = useMediaQuery(theme.breakpoints.down('sm'));
+  const [state, setState] = useState<avatarsType[]>([]);
+  useEffect(() => {
+    matchesSm ? setState([avatars[0]]) : setState([...avatars]);
+  }, [matchesSm]);
   return (
     <Grid
       container
@@ -13,7 +20,7 @@ export const AvatarCards = () => {
       alignItems="baseline"
       sx={sxNewsCards}
     >
-      {avatars.map((avatar) => {
+      {state.map((avatar) => {
         return (
           <Grid key={nanoid()} item>
             <CardContainer>

@@ -90,4 +90,4 @@ export const BoxDateContainer = styled(Box)<BoxProps>(({ theme }) => ({
   paddingBottom: 6,
 }));
 
-export const sxNewsCards = { mb: { xl: 7.5, lg: 7.5, md: 2.5, sm: 1.2, xs: 1.2 } };
+export const sxNewsCards = { mb: { xl: 7.5, lg: 7.5, md: 5, sm: 3.8, xs: 3.8 } };

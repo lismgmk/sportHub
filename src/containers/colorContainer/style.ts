@@ -37,3 +37,4 @@ export const sxResponsiveContainerWeight = {
   position: 'relative',
   overflow: 'hidden',
 };
+export const sxContents = { pb: { xl: 7.5, lg: 7.5, md: 5, sm: 5, xs: 6.2 } };

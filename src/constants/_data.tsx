@@ -15,6 +15,8 @@ export type cardsType = {
   article: string;
 };
 
+export type avatarsType = { pathImg: string; name: string; occupation: string; conversation: string };
+
 export const headerTitles = {
   header: {
     title: ' Юрий Поклад: «Динамо» как бы начинает работать заново',

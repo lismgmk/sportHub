@@ -15,7 +15,7 @@ export const AppPage = () => {
       <ColorContainer bgImage={headerTitles.header.pathImg}>
         <GeneralHeaderWrapper
           height={{ xl: 520, md: 520, sm: 520, xs: 205 }}
-          paddingTitle={{ xl: 25, md: 25, sm: 25, xs: 6 }}
+          paddingTitle={{ xl: 25, md: 25, sm: 25, xs: 5.2 }}
           tag={headerTitles.header.tag}
           title={headerTitles.header.title}
           variant={'h1'}

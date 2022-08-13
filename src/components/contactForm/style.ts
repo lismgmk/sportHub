@@ -17,8 +17,11 @@ export const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 export const CustomTextField = styled(TextField)<TextFieldProps>(({ theme }) => ({
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.only('md')]: {
     width: 201,
+  },
+  [theme.breakpoints.only('xs')]: {
+    width: 180,
   },
   width: 379,
   borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
