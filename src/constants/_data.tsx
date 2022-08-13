@@ -119,7 +119,7 @@ export const cardsSlice2 = [
 ];
 export const avatars = [
   {
-    pathImg: '/avatar_1.png',
+    pathImg: './avatar_1.png',
     name: 'Алексей Михайличенко',
     occupation: 'Главный тренер ф.к. Динамо',
     conversation: 'Сергей Корниленко станет играющим тренером «Крыльев советов»',

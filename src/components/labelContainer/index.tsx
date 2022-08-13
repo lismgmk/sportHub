@@ -9,7 +9,7 @@ export const LabelContainer = () => {
         <LogoLabel variant={'h4'}>© 2022 «Спортхаб»</LogoLabel>
       </Grid>
       <Grid item display={'flex'}>
-        <Box component="img" sx={{ height: 15 }} src={'/mini_logo.png'} alt={'logo'} />
+        <Box component="img" sx={{ height: 15 }} src={'./mini_logo.png'} alt={'logo'} />
         <LogoLabel sx={{ pl: 2.2 }} variant={'h4'}>
           Разработка сайта — компания PRAS
         </LogoLabel>
