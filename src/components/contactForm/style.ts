@@ -1,11 +1,6 @@
-import { Button, ButtonProps, TextField, TextFieldProps, BoxProps, Box } from '@mui/material';
+import { Button, ButtonProps, TextField, TextFieldProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-export const BoxContainer = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-}));
 export const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
   fontSize: 12,
   fontWeight: 500,
@@ -22,7 +17,9 @@ export const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 export const CustomTextField = styled(TextField)<TextFieldProps>(({ theme }) => ({
-  marginRight: '20px',
+  [theme.breakpoints.down('md')]: {
+    width: 201,
+  },
   width: 379,
   borderBottom: `2px solid ${theme.palette.primary.contrastText}`,
   color: theme.palette.primary.main,

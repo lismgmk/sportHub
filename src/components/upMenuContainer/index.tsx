@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useTheme, useMediaQuery } from '@mui/material';
 import { upPages } from 'constants/_data';
 import { Logo } from 'elements/logo';
 import { MobileMenu } from 'elements/mobileMenu';
@@ -8,25 +8,22 @@ import React from 'react';
 import { ContainerUpMenu, UpperMenuButton } from './style';
 
 export const UpMenuContainer = () => {
+  const theme = useTheme();
+  const matchesMd = useMediaQuery(theme.breakpoints.down('lg'));
   return (
     <ContainerUpMenu>
       <Logo colorLetter={PS_MAIN_RED} />
-      {/*<Typography variant={'caption'}>*/}
-      {/*  sport*/}
-      {/*  <Typography variant={'caption'} sx={{ color: 'primary.light' }}>*/}
-      {/*    hub*/}
-      {/*  </Typography>*/}
-      {/*</Typography>*/}
-      <Box sx={{ display: { lg: 'block', md: 'none', sm: 'none' } }}>
-        {upPages.map((page) => (
-          <UpperMenuButton key={nanoid()} onClick={() => {}}>
-            {page.name}
-          </UpperMenuButton>
-        ))}
-      </Box>
-      <Box sx={{ display: { lg: 'none', md: 'block', sm: 'block' } }}>
+      {matchesMd ? (
         <MobileMenu />
-      </Box>
+      ) : (
+        <Box>
+          {upPages.map((page) => (
+            <UpperMenuButton key={nanoid()} onClick={() => {}}>
+              {page.name}
+            </UpperMenuButton>
+          ))}
+        </Box>
+      )}
     </ContainerUpMenu>
   );
 };

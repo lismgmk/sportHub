@@ -6,11 +6,17 @@ interface CustomGridProps extends GridProps {
 }
 export const ContainerContentGrid = styled(Grid, {
   shouldForwardProp: (props) => props !== 'bgColor',
-})<CustomGridProps>((props) => ({
-  width: 680,
+})<CustomGridProps>(({ theme, bgColor }) => ({
   height: 180,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: props.bgColor,
+  background: bgColor,
 }));
+
+export const sxResponsiveContainerWeightContent = {
+  pl: { xs: 0, sm: 1.2, md: 1.2, lg: 1.2, xl: 1.2 },
+  pr: { xs: 0, sm: 1.2, md: 1.2, lg: 1.2, xl: 1.2 },
+  position: 'relative',
+  overflow: 'hidden',
+};

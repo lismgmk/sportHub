@@ -17,6 +17,7 @@ export const CustomWrapperBox = styled(Box, {
   height: '100%',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center center',
   '&: before': {
     content: '""',
     top: 0,
@@ -25,6 +26,14 @@ export const CustomWrapperBox = styled(Box, {
     height: '100%',
     zIndex: 0,
     backgroundColor: !props.bgColor && 'rgba(0, 0, 0, 0.5)',
+    backgroundPosition: 'center center',
     position: 'absolute',
   },
 }));
+
+export const sxResponsiveContainerWeight = {
+  pl: { xs: 1.2, sm: 1.2, md: 1.2, lg: 1.2, xl: 1.2 },
+  pr: { xs: 1.2, sm: 1.2, md: 1.2, lg: 1.2, xl: 1.2 },
+  position: 'relative',
+  overflow: 'hidden',
+};

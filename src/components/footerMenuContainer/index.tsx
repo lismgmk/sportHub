@@ -6,17 +6,17 @@ import { Advertising, EmailContact } from './style';
 
 export const FooterMenuContainer = () => {
   return (
-    <Grid container sx={{ pt: 4, pb: 8.2 }}>
-      <Grid xs={3} item>
+    <Grid rowSpacing={5} container sx={{ pt: { md: 4, sm: 3, xs: 3 } }}>
+      <Grid justifyContent={'center'} container md={3} sm={12} xs={12} item>
         <Logo colorLetter={PS_MAIN_WHITE} />
       </Grid>
-      <Grid xs={3} item>
+      <Grid justifyContent={'center'} container md={3} sm={12} xs={12} item>
         <Typography variant={'body2'}>О проекте</Typography>
       </Grid>
-      <Grid xs={3} item>
+      <Grid justifyContent={'center'} container md={3} sm={12} xs={12} item>
         <Typography variant={'body2'}>Обратная связь</Typography>
       </Grid>
-      <Grid xs={3} item flexDirection={'column'}>
+      <Grid alignItems={'center'} container md={3} sm={12} xs={12} item flexDirection={'column'}>
         <Advertising variant={'body2'}>Реклама:</Advertising>
         <EmailContact variant={'overline'}>ads@sporthub.news</EmailContact>
       </Grid>

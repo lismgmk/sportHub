@@ -14,40 +14,36 @@ export const AppPage = () => {
     <div>
       <ColorContainer bgImage={headerTitles.header.pathImg}>
         <GeneralHeaderWrapper
-          height={{ lg: 520, md: 520, sm: 205 }}
+          height={{ xl: 520, md: 520, sm: 520, xs: 205 }}
+          paddingTitle={{ xl: 25, md: 25, sm: 25, xs: 6 }}
           tag={headerTitles.header.tag}
           title={headerTitles.header.title}
+          variant={'h1'}
         >
           <UpMenuContainer />
         </GeneralHeaderWrapper>
       </ColorContainer>
-      <ColorContainer color={PS_MAIN_RED}>
-        <MenuContainer />
-      </ColorContainer>
+      <MenuContainer />
       <ColorContainer color={PS_MAIN_BACKGROUND}>
         <CardsContainer />
       </ColorContainer>
       <ColorContainer bgImage={headerTitles.middle.pathImg}>
         <GeneralHeaderWrapper
-          // height={536}
-          height={{ lg: 536, md: 276, sm: 276 }}
-          // paddingTitle={31}
-          paddingTitle={{ lg: 31, md: 12, sm: 9 }}
+          height={{ xl: 536, md: 536, sm: 276, xs: 276 }}
+          paddingTitle={{ xl: 31, lg: 31, md: 31, sm: 15, xs: 11 }}
           tag={headerTitles.middle.tag}
           title={headerTitles.middle.title}
+          variant={'h2'}
         />
       </ColorContainer>
-      <ColorContainer color={PS_MAIN_BACKGROUND}>
-        <ContactsContainer />
-      </ColorContainer>
+      <ContactsContainer />
       <ColorContainer bgImage={headerTitles.footer.pathImg}>
         <GeneralHeaderWrapper
-          height={{ lg: 536, md: 276, sm: 276 }}
-          // height={536}
-          // paddingTitle={31}
-          paddingTitle={{ lg: 31, md: 12, sm: 9 }}
+          height={{ xl: 536, md: 536, sm: 276, xs: 276 }}
+          paddingTitle={{ xl: 31, lg: 31, md: 31, sm: 12, xs: 10 }}
           article={headerTitles.footer.article}
           title={headerTitles.footer.title}
+          variant={'h2'}
         />
       </ColorContainer>
       <ColorContainer color={PS_MAIN_RED}>

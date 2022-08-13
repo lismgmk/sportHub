@@ -5,21 +5,10 @@ export const PS_MAIN_RED = '#F01B0D';
 export const PS_MAIN_WHITE = '#FFFFFF';
 export const PS_MAIN_GREY_LIGHT = '#828282';
 export const PS_OPTIONAL_BLACK = '#000000';
-export const PS_MAIN_GREY_DARK = 'rgba(0, 0, 0, 0.6)';
 export const PS_MAIN_BLACK = '#1F1F1F';
 export const PS_MAIN_BACKGROUND = '#E5E5E5';
 
 declare module '@mui/material/styles' {
-  // interface Theme {
-  //   palette: IPalette;
-  // }
-  // interface PaletteOptions {
-  //   search?: PaletteOptions['primary'];
-  //   field?: PaletteOptions['primary'];
-  //   line?: PaletteOptions['primary'];
-  //   primarySecond?: PaletteOptions['primary'];
-  //   optionalSecond?: PaletteOptions['primary'];
-  // }
   interface IPalette {
     primary: {
       main: string;
@@ -108,33 +97,55 @@ declare module '@mui/material/styles' {
     sm: true;
     md: true;
     lg: true;
-    xl: false;
+    xl: true;
   }
 }
+const customBreakpoints = {
+  xs: 0,
+  sm: 500,
+  md: 768,
+  lg: 1100,
+  xl: 1400,
+};
+
+const breakpoints = createTheme({
+  breakpoints: {
+    values: customBreakpoints,
+  },
+});
 
 export const themeCustom = createTheme({
   shadows: shadows.map(() => 'none') as Shadows,
   breakpoints: {
-    values: {
-      xs: 0,
-      sm: 320,
-      md: 768,
-      lg: 1380,
-    },
+    values: customBreakpoints,
   },
   typography: {
     fontFamily: `"Roboto Flex", sans-serif`,
     h1: {
-      fontSize: 40,
+      [breakpoints.breakpoints.up('sm')]: {
+        fontSize: 40,
+        lineHeight: '45px',
+      },
+      fontSize: 20,
       fontWeight: 700,
       color: PS_MAIN_WHITE,
+      lineHeight: '23px',
     },
     h2: {
-      fontSize: 36,
+      [breakpoints.breakpoints.up('md')]: {
+        fontSize: 36,
+        lineHeight: '45px',
+      },
+      fontSize: 20,
       fontWeight: 700,
       color: PS_MAIN_WHITE,
+      lineHeight: '23px',
     },
     h3: {
+      [breakpoints.breakpoints.only('xs')]: {
+        fontSize: 16,
+        lineHeight: '20px',
+      },
       fontSize: 26,
       fontWeight: 700,
       color: PS_MAIN_BLACK,
@@ -160,15 +171,23 @@ export const themeCustom = createTheme({
       fontSize: 18,
       fontWeight: 400,
       color: PS_OPTIONAL_BLACK,
-      paddingTop: 40,
-      paddingBottom: 24,
       textTransform: 'uppercase',
     },
     body1: {
-      fontSize: 20,
+      [breakpoints.breakpoints.only('xs')]: {
+        fontSize: 14,
+        lineHeight: '18px',
+      },
+      [breakpoints.breakpoints.between('sm', 'xl')]: {
+        fontSize: 16,
+        lineHeight: '20px',
+      },
+      [breakpoints.breakpoints.up('xl')]: {
+        fontSize: 20,
+        lineHeight: '25px',
+      },
       fontWeight: 300,
       color: PS_MAIN_GREY_LIGHT,
-      lineHeight: '25px',
     },
     body2: {
       fontSize: 16,
@@ -180,6 +199,7 @@ export const themeCustom = createTheme({
       fontSize: 12,
       fontWeight: 400,
       textTransform: 'uppercase',
+      lineHeight: '14px',
     },
     caption: {
       fontSize: 20,
@@ -189,19 +209,11 @@ export const themeCustom = createTheme({
       transform: 'matrix(0.98, 0, -0.19, 1, 0, 0)',
       lineHeight: '20px',
     },
-
-    // button: {
-    //   fontSize: 12,
-    //   fontWeight: 500,
-    //   color: PS_MAIN_WHITE,
-    //   background: PS_MAIN_RED,
-    //   lineHeight: '14px',
-    // },
     overline: {
       fontSize: 14,
       fontWeight: 500,
       color: PS_MAIN_WHITE,
-      textTransform: 'lowercase',
+      textTransform: 'capitalize',
     },
   },
   palette: {
@@ -211,12 +223,6 @@ export const themeCustom = createTheme({
       dark: PS_OPTIONAL_BLACK,
       contrastText: PS_MAIN_GREY_LIGHT,
     },
-    // secondary: {
-    //   main: PS_OPTIONAL_LEAD,
-    //   light: PS_OPTIONAL_GREY,
-    //   dark: PS_OPTIONAL_GREEN,
-    //   contrastText: PS_OPTIONAL_TEXT_2,
-    // },
     background: {
       paper: PS_MAIN_RED,
       default: PS_MAIN_BACKGROUND,
@@ -225,34 +231,5 @@ export const themeCustom = createTheme({
       primary: PS_OPTIONAL_BLACK,
       secondary: PS_MAIN_WHITE,
     },
-    // search: {
-    //   main: PS_OPTIONAL_SEARCH,
-    // },
-    // field: {
-    //   main: PS_OPTIONAL_FIELD,
-    // },
-    // line: {
-    //   main: PS_OPTIONAL_LINE,
-    // },
-    // primarySecond: {
-    //   main: PS_MAIN_GREY,
-    //   light: PS_MAIN_WHITE,
-    //   dark: PS_MAIN_BLACK,
-    // },
-    // optionalSecond: {
-    //   main: PS_OPTIONAL_ORANGE,
-    //   light: PS_OPTIONAL_RED,
-    // },
   },
-
-  // overrides: {
-  //   MuiInput: {
-  //     input: {
-  //       '&::placeholder': {
-  //         color: 'gray',
-  //       },
-  //       color: 'white', // if you also want to change the color of the input, this is the prop you'd use
-  //     },
-  //   },
-  // },
 });

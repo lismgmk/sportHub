@@ -5,7 +5,7 @@ import { IconWrapper } from './style';
 
 export const SocialIconFooterBox = () => {
   return (
-    <Grid container justifyContent={'center'} spacing={3}>
+    <Grid container justifyContent={'center'} columnSpacing={{ xs: 1.5, sm: 1.5, md: 3 }}>
       {socialNetworks.map((icon) => {
         return (
           <Grid key={nanoid()} item>

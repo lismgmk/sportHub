@@ -1,17 +1,26 @@
-import { CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { cardsType } from 'constants/_data';
-import { DateContainer, CardContainer, BoxDateContainer, CardFullContainer } from './style';
+import { nanoid } from 'nanoid';
+import {
+  DateContainer,
+  BoxDateContainer,
+  CardFullContainer,
+  CardCustomMedia,
+  CardFullContent,
+  CardImgContent,
+  sxNewsCards,
+} from './style';
 
 export const NewsCards = (props: { cards: cardsType[] }) => {
   return (
-    <Grid container justifyContent="space-between">
+    <Grid container spacing={2} justifyContent="space-between" sx={sxNewsCards}>
       {props.cards.map((card) => {
         return (
-          <Grid item sx={{ mb: 7.5 }}>
+          <Grid key={nanoid()} item>
             {card.fullImg ? (
-              <CardFullContainer img={card.pathImg}>
-                <CardContent sx={{ mt: 45, p: 2.5, fontSize: 11 }}>
-                  <BoxDateContainer sx={{ pt: 0 }}>
+              <CardFullContainer sx={{ justifyContent: 'end' }} img={card.pathImg}>
+                <CardFullContent>
+                  <BoxDateContainer>
                     <DateContainer variant={'h4'}>{card.data}</DateContainer>
                     <Typography sx={{ ml: 0.5, color: 'primary.light' }} variant={'h5'}>
                       {card.tag}
@@ -21,30 +30,24 @@ export const NewsCards = (props: { cards: cardsType[] }) => {
                     {card.title}
                   </Typography>
                   <Typography variant={'body1'}>{card.article}</Typography>
-                </CardContent>
+                </CardFullContent>
               </CardFullContainer>
             ) : (
-              <CardContainer>
-                <CardMedia
-                  sx={{ display: 'block', width: 640, borderRadius: '2px' }}
-                  height={'360'}
-                  component="img"
-                  image={card.pathImg}
-                  alt="post_1"
-                />
-                <CardContent sx={{ m: 0, p: 0, fontSize: 11 }}>
+              <CardFullContainer sx={{ justifyContent: 'space-between' }}>
+                <CardCustomMedia image={card.pathImg} />
+                <CardImgContent>
                   <BoxDateContainer>
                     <DateContainer variant={'h4'}>{card.data}</DateContainer>
                     <Typography sx={{ ml: 0.5 }} variant={'h5'}>
                       {card.tag}
                     </Typography>
                   </BoxDateContainer>
-                  <Typography sx={{ mb: 1.2 }} variant={'h3'}>
+                  <Typography sx={{ mb: 1.2, pr: 1 }} variant={'h3'}>
                     {card.title}
                   </Typography>
                   <Typography variant={'body1'}>{card.article}</Typography>
-                </CardContent>
-              </CardContainer>
+                </CardImgContent>
+              </CardFullContainer>
             )}
           </Grid>
         );

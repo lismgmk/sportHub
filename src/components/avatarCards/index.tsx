@@ -1,34 +1,25 @@
 import { Grid, Typography, Box, SvgIcon } from '@mui/material';
+import { sxNewsCards } from 'components/newsCards/style';
 import { avatars } from 'constants/_data';
+import { nanoid } from 'nanoid';
 import { QuoteSvg } from 'svgIcons/QuoteSvg';
-import { CardContainer } from './style';
+import { CardContainer, sxAvatarSvgIcon, sxAvatarImage } from './style';
 
 export const AvatarCards = () => {
   return (
-    <Grid container justifyContent="space-between" alignItems="baseline">
+    <Grid
+      container
+      justifyContent={{ xs: 'center', sm: 'center', md: 'space-between' }}
+      alignItems="baseline"
+      sx={sxNewsCards}
+    >
       {avatars.map((avatar) => {
         return (
-          <Grid item sx={{ mb: 7.5 }}>
+          <Grid key={nanoid()} item>
             <CardContainer>
               <Box sx={{ position: 'relative' }}>
-                <SvgIcon
-                  sx={{
-                    width: 48,
-                    height: 48,
-                    color: 'primary.light',
-                    position: 'absolute',
-                    zIndex: 3,
-                    left: -31,
-                    bottom: 55,
-                  }}
-                  component={QuoteSvg}
-                />
-                <Box
-                  component="img"
-                  sx={{ width: 100, height: 100, position: 'relative ' }}
-                  src={avatar.pathImg}
-                  alt={avatar.pathImg}
-                />
+                <SvgIcon sx={sxAvatarSvgIcon} component={QuoteSvg} />
+                <Box component="img" sx={sxAvatarImage} src={avatar.pathImg} alt={avatar.pathImg} />
               </Box>
               <Typography sx={{ mt: 1.6 }} variant={'h6'}>
                 {avatar.name}

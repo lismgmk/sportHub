@@ -2,8 +2,10 @@ import { SvgIcon, IconButton } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { upPages } from 'constants/_data';
+import { nanoid } from 'nanoid';
 import * as React from 'react';
 import { BurgerSvg } from 'svgIcons/BurgerSvg';
+import { sxSvgIcon, sxMenu, sxMenuItem } from './style';
 
 export const MobileMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -17,38 +19,13 @@ export const MobileMenu = () => {
 
   return (
     <div>
-      <IconButton onClick={handleClick}>
-        <SvgIcon sx={{ width: 48, color: 'primary.light' }} component={BurgerSvg} />
+      <IconButton sx={{ m: 0, p: 0 }} onClick={handleClick}>
+        <SvgIcon sx={sxSvgIcon} component={BurgerSvg} />
       </IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        sx={{
-          '& .MuiPaper-root': {
-            backgroundColor: 'primary.light',
-            width: '100%',
-          },
-          '& .MuiMenu-list': {
-            color: 'primary.dark',
-          },
-        }}
-      >
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose} sx={sxMenu}>
         {upPages.map((page) => {
           return (
-            <MenuItem
-              sx={{
-                color: 'primary.dark',
-                textAlign: 'center',
-                padding: '10px',
-                display: 'block',
-                borderBottom: '2px solid',
-                ':first-child': {
-                  borderTop: '2px solid',
-                },
-              }}
-              onClick={handleClose}
-            >
+            <MenuItem key={nanoid()} sx={sxMenuItem} onClick={handleClose}>
               {page.name}
             </MenuItem>
           );

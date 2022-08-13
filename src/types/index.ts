@@ -1,5 +1,7 @@
 export type BreakPointsProps = {
-  lg: number;
-  md: number;
-  sm: number;
+  xl?: number;
+  lg?: number;
+  md?: number;
+  sm?: number;
+  xs?: number;
 };

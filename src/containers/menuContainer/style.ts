@@ -1,19 +1,33 @@
-import { Box, BoxProps, Button, ButtonProps } from '@mui/material';
+import { Box, BoxProps, Button, ButtonProps, Container, ContainerProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const ContainerLowMenu = styled(Box)<BoxProps>(({ theme }) => ({
   position: 'sticky',
+  background: theme.palette.primary.main,
   height: 60,
+  [theme.breakpoints.down('lg')]: {
+    overflowX: 'auto',
+  },
+}));
+
+export const CustomContainer = styled(Container)<ContainerProps>(({ theme }) => ({
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'center',
+  alignItems: 'center',
+  maxWidth: 'xl',
+  width: 'fit-content',
+  height: '100%',
 }));
 
 export const LowerMenuButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  fontsize: '14px',
-  fontWeight: 500,
-  color: theme.palette.primary.light,
+  width: 'fit-content',
+  padding: '0 25px',
+  [theme.breakpoints.down('md')]: {
+    padding: '0 12.5px',
+  },
   background: 'rgba(0, 0, 0, 0)',
-  padding: '15px 25px',
-  textTransform: 'capitalize',
+  whiteSpace: 'nowrap',
+  minHeight: 0,
+  minWidth: 0,
+  display: 'block',
 }));

@@ -1,20 +1,34 @@
+import { Grid, Container } from '@mui/material';
 import { ContactForm } from 'components/contactForm';
+import { sxNewsCards } from 'components/newsCards/style';
 import { SocialIconBox } from 'components/socialIconBox';
 import { WrapperContact } from 'components/wrapperContact';
+import { sxResponsiveContainerWeightContent } from 'components/wrapperContact/style';
 import { contactsSubtitle } from 'constants/_data';
-import { PS_MAIN_RED, PS_OPTIONAL_BLACK } from 'mainStyles/GlobalTheme';
+import { LinkPosts } from 'containers/cardsContainer/style';
+import { CustomWrapperBox } from 'containers/colorContainer/style';
+import { PS_MAIN_RED, PS_OPTIONAL_BLACK, PS_MAIN_BACKGROUND } from 'mainStyles/GlobalTheme';
 import React from 'react';
-import { ContainerCardsMain } from './style';
 
 export const ContactsContainer = () => {
   return (
-    <ContainerCardsMain container justifyContent={'space-between'}>
-      <WrapperContact subtitle={contactsSubtitle[0].name} bg={PS_MAIN_RED}>
-        <SocialIconBox />
-      </WrapperContact>
-      <WrapperContact subtitle={contactsSubtitle[1].name} bg={PS_OPTIONAL_BLACK}>
-        <ContactForm />
-      </WrapperContact>
-    </ContainerCardsMain>
+    <CustomWrapperBox bgColor={PS_MAIN_BACKGROUND}>
+      <Container maxWidth={'xl'} disableGutters sx={sxResponsiveContainerWeightContent}>
+        <Grid container spacing={{ xl: 3, lg: 3, md: 3, sm: 2, xs: 0 }} sx={sxNewsCards}>
+          <Grid item xl={6} lg={6} md={8} sm={12} xs={12}>
+            <LinkPosts variant={'subtitle2'}>{contactsSubtitle[0].name}</LinkPosts>
+            <WrapperContact bg={PS_MAIN_RED}>
+              <SocialIconBox />
+            </WrapperContact>
+          </Grid>
+          <Grid item xl={6} lg={6} md={4} sm={12} xs={12}>
+            <LinkPosts variant={'subtitle2'}>{contactsSubtitle[1].name}</LinkPosts>
+            <WrapperContact bg={PS_OPTIONAL_BLACK}>
+              <ContactForm />
+            </WrapperContact>
+          </Grid>
+        </Grid>
+      </Container>
+    </CustomWrapperBox>
   );
 };
